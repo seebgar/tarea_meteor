@@ -1,0 +1,30 @@
+<body>
+    <div class="container">
+      <header>
+        <h1>Eventos Uniandes</h1>
+      </header>
+
+      <form class="new-evento">
+        <input type="text" name="name" placeholder="Nombre del evento" />
+        <input type="text" name="description" placeholder="Descipcion del evento" />
+        <input type="text" name="person" placeholder="Responsable del evento" />
+        <input type="text" name="start" placeholder="Fecha Inicio" />
+        <input type="text" name="end" placeholder="Fecha Final" />
+        <input type="text" name="location" placeholder="Ubicacion del evento" />
+        <button type="submit">Enviar</button>
+      </form>
+   
+      <ul>
+        {{#each eventos}}
+          {{> evento}}
+        {{/each}}
+      </ul>
+    </div>
+  </body>
+
+   
+
+   
+  <template name="evento">
+    <li>{{evento.nombre}} - {{evento.descripcion}} @ {{evento.location}}</li>
+  </template>
